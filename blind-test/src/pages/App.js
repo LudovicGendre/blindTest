@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Authentification from '../components/Form/Auth'
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
             </li>
           </ul>
         </nav>
+        < Authentification/>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
