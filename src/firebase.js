@@ -5,13 +5,13 @@ import { getPlayerData } from "./data/playerEffects";
 
 export const initFirebase = () => {
   const firebaseConfig = {
-    apiKey: "AIzaSyAoi_dkAeY1FFdLPmWS5voHjbIxegqSzw8",
-    authDomain: "ynov-b3-21.firebaseapp.com",
-    projectId: "ynov-b3-21",
-    storageBucket: "ynov-b3-21.appspot.com",
-    messagingSenderId: "223121527532",
-    appId: "1:223121527532:web:3384aee092f596b0b00bc9",
-    measurementId: "G-VN2VY6XM1J",
+    apiKey: process.env.REACT_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
   };
   // Initialize Firebase
   if (firebase.apps.length === 0) {

@@ -4,12 +4,32 @@
 /node_modules
 /.pnp
 .pnp.js
+.env.local
 
 # testing
 /coverage
 
 # production
 /build
+
+# Typescript
+build/
+*.tsbuildinfo
+
+# Environment
+*.env
+
+# VSCode
+.vscode
+
+# Coverage
+coverage
+.nyc_output
+
+# MacOS
+.DS_Store
+
+.history
 
 # misc
 .DS_Store
