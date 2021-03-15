@@ -1,9 +1,7 @@
 import { useQuery } from "react-query"
 import firebase from 'firebase'
 
-
  const User = () => {
-
   const fa = firebase.auth();
   const userId = fa.currentUser?.uid
   return useQuery("repoData", () =>

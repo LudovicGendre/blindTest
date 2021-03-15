@@ -11,7 +11,6 @@ const Profil = () => {
   if (isLoading) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
-  console.log(data)
   return (
     <>
       <section style={{ marginTop: '5%', marginBottom: '15%' }} className='py-8 py-md-11 border-bottom'>

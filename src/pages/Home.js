@@ -11,7 +11,6 @@ const Home = () => {
   if (isLoading) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
-  console.log(data)
   return (
     <>
       <section className='pt-4 pt-md-11'>
@@ -41,7 +40,7 @@ const Home = () => {
       <section style={{ marginTop: '5%', marginBottom: '15%' }} className='py-8 py-md-11 border-bottom'>
         <Container>
           <img className='mx-auto d-block rounded-circle' style={{height:'200px',width:'20%'}} src={data?.player?.avatar} alt='avatar player'></img>
-          <h2 className='text-center'>We are happy to see you again, {data?.player.name}</h2>
+          <h2 className='text-center'>We are happy to see you again, {data?.player.name} !</h2>
           <br></br>
           <div className='row'>
             <br/>
