@@ -10,7 +10,8 @@ import {
 import { disconnectUser } from "../components/userEffects";
 import { launchSequence } from "./appEffects";
 import { Authenticate } from '../components/SignUp';
-import  Profil  from "../components/Profil";
+import Profil from "../components/Profil";
+import Home from '../pages/Home'
 import './Navigation.css'
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import NotFoundPage from '../layouts/error'
@@ -49,27 +50,30 @@ const Navigation = () => {
     dispatch(launchSequence());
   }, [dispatch]);
   return isLoading ? (
-     <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
   ) : (
       <Router>
         {isAuthenticated ? (
-        <Navbar bg="light" variant= "light">
-        <Navbar.Brand ><Link to="/">
-          Blind-Test
+          <Navbar bg="white" variant="light">
+            <Container>
+              <Navbar.Brand ><Link to="/">
+                Blind-Test
         </Link></Navbar.Brand>
-        <Nav className='mr-auto'>
-          <Nav.Link><Link to="/game">Game</Link></Nav.Link>
-          <Nav.Link><Link to="/profile">Profile</Link></Nav.Link>
-          <Nav.Link><Link
-            to="/auth"
-            onClick={() => disconnectUser()}
-            className="sign-out-button"
-          >
-            Sign Out
-          </Link></Nav.Link>
-          
-        </Nav>
-      </Navbar>
+              <div className='collapse navbar-collapse'>
+                <ul className='navbar-nav ml-auto'>
+                  <li className=' nav-item dropdown'>
+                    <Nav.Link><Link to="/game">Game</Link></Nav.Link>
+                  </li>
+                  <li className=' nav-item dropdown'>
+                    <Nav.Link><Link to="/profile">Profile</Link></Nav.Link>
+                  </li>
+                </ul>
+                <a className='navbar-btn btn btn-sm btn-primary lift ml-auto' to="/auth"
+                  to="/auth"
+                  onClick={() => disconnectUser()}>Sign Out</a>
+              </div>
+            </Container>
+          </Navbar>
         ) : undefined}
         <Switch>
           <Route path="/auth">
@@ -79,13 +83,14 @@ const Navigation = () => {
               </div>
             </Container>
           </Route>
-          <Route path="*" component={NotFoundPage} />
+          {/* <Route path="*" component={NotFoundPage} /> */}
           <PrivateRoute path="/game">
           </PrivateRoute>
           <PrivateRoute path="/profile">
             <Profil />
           </PrivateRoute>
           <PrivateRoute path="/">
+            <Home />
           </PrivateRoute>
         </Switch>
       </Router>
