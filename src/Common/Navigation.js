@@ -79,7 +79,7 @@ const Navigation = () => {
                   </ul>
                   <a className='navbar-btn btn btn-sm btn-primary lift ml-auto' to="/auth"
                     to="/auth"
-                    onClick={() => disconnectUser()}>Sign Out</a>
+                    onClick={() => disconnectUser()}>Disconnect</a>
                 </div>
               </Container>
             </Navbar>
