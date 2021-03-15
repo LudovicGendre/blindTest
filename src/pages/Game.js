@@ -1,5 +1,6 @@
 import React from "react";
 import './Game.css'
+// import {Answer} from './Answer'
 
 export const Game = ({ question }) => {
   return (
@@ -10,6 +11,9 @@ export const Game = ({ question }) => {
         <source  src={question?.audio_url} />
       </audio>
       </div>
+      {question?.answers.map((answer, index) => {
+        return <button>{answer}</button>
+      })}
     </>
   )
 }
