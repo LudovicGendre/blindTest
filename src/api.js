@@ -7,10 +7,13 @@ const handleError = (err) => {
 };
 
 const apiHelper = {
-  getPlayer: (id) =>
-    fetch(`${apiRoot}players?id=${id}`)
-      .then((result) => result.json())
-      .catch(handleError),
+  getPlayer: () =>
+  fetch(`${apiRoot}players?id=${firebase.auth().currentUser.uid}`)
+  .then((result) => result.json())
+  .catch((err) => {
+    console.log(err);
+    return null;
+  }),
   getStats: () =>
     fetch(`${apiRoot}game`)
       .then((result) => result.json())
