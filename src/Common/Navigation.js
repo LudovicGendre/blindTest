@@ -10,8 +10,9 @@ import {
 import { disconnectUser } from "../components/userEffects";
 import { launchSequence } from "./appEffects";
 import { Authenticate } from '../components/SignUp';
-import Profil from "../components/Profil";
+import Profil from "../pages/Profil";
 import Home from '../pages/Home'
+import GamePlay from '../pages/GamePlayer'
 import './Navigation.css'
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import NotFoundPage from '../layouts/error'
@@ -94,6 +95,7 @@ const Navigation = () => {
             </Route>
             {/* <Route path="*" component={NotFoundPage} /> */}
             <PrivateRoute path="/game">
+              <GamePlay/>
             </PrivateRoute>
             <PrivateRoute path="/profile">
               <Profil />
