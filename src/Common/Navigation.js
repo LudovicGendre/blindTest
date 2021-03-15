@@ -10,7 +10,10 @@ import {
 import { disconnectUser } from "../components/userEffects";
 import { launchSequence } from "./appEffects";
 import { Authenticate } from '../components/SignUp';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Container } from 'react-bootstrap';
+import  Profil  from "../components/Profil";
+import './Navigation.css'
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import NotFoundPage from '../layouts/error'
 
 const PrivateRoute = ({ children, ...rest }) => {
   const isAuthenticated = useSelector(
@@ -46,13 +49,7 @@ const Navigation = () => {
     dispatch(launchSequence());
   }, [dispatch]);
   return isLoading ? (
-    <div className="loading-root">
-      <img
-        src="/assets/spinner.svg"
-        alt="Loading animation"
-        style={{ height: "50px" }}
-      />
-    </div>
+     <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
   ) : (
       <Router>
         {isAuthenticated ? (
@@ -82,9 +79,11 @@ const Navigation = () => {
               </div>
             </Container>
           </Route>
+          <Route path="*" component={NotFoundPage} />
           <PrivateRoute path="/game">
           </PrivateRoute>
           <PrivateRoute path="/profile">
+            <Profil />
           </PrivateRoute>
           <PrivateRoute path="/">
           </PrivateRoute>
