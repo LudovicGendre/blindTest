@@ -10,7 +10,7 @@ import {
 import { disconnectUser } from "../components/userEffects";
 import { launchSequence } from "./appEffects";
 import { Authenticate } from '../components/SignUp';
-import Profil from "../components/Profil";
+import Profil from "../pages/Profil";
 import Home from '../pages/Home'
 import './Navigation.css'
 import { Navbar, Nav, Container } from 'react-bootstrap';
