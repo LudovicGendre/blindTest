@@ -1,20 +1,13 @@
 import React from "react";
 import { Container } from 'react-bootstrap';
-import { useQuery } from "react-query"
-import firebase from 'firebase'
 import { Link } from "react-router-dom";
 import logo from '../assets/20944771.jpg'
+import player from '../components/player'
 
 
 
 const Home = () => {
-  const fa = firebase.auth();
-  const userId = fa.currentUser?.uid
-  const { isLoading, error, data, isFetching } = useQuery("repoData", () =>
-    fetch(
-      `https://europe-west1-ynov-b3-21.cloudfunctions.net/players?id=${userId}`
-    ).then((res) => res.json())
-  );
+  const { isLoading, error, data } = player()
   if (isLoading) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
