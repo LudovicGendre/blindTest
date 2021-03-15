@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/LudovicGendre/blindTest/compare/0.1.1...0.1.2) (2021-03-15)
+
+
+### Bug Fixes
+
+* fetch player ([7aa1a4f](https://github.com/LudovicGendre/blindTest/commit/7aa1a4fa34e1dee129e73c678a0f798129e1f79c))
+
 ### 0.1.1 (2021-03-15)
 
 
